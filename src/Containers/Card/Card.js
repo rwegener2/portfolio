@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Card.css';
 import styled from 'styled-components';
-
+import  { posts } from '../../database/post_index';
 
 // https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/
 const Div = styled.div`
@@ -16,15 +16,15 @@ const Div = styled.div`
  }
 `;
 
+console.log(posts);
 
-const Card = () => {
+const Card = ({ postInfo }) => {
     return (
         <Div className="card">
             {/* <img src="..." class="card-img-top" alt="..."> */}
             <div className="card-body">
-                <h5 className="card-title">Post</h5>
-                <p className="card-text">Here is a little paragraph about and about this blog.  I need it to be longer, so that I can test margins so I am adding more to this beautiful self-bio.  Enjoy!</p>
-                {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+                <h5 className="card-title">{postInfo.title}</h5>
+                <p className="card-text">{postInfo.description}</p>
                 <Link className="btn btn-primary" to="/post">Read</Link>
             </div>
         </Div>
