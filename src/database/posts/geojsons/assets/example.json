@@ -1,0 +1,12 @@
+{
+	"Nutty Donuts": {
+		"city": "Vancouver",
+		"glaze-types": [
+			"chocolate", 
+			"maple",
+			"pecan",
+			"grape"
+		],
+	}
+}
+
