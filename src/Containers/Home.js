@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import Banner from '../Containers/Banner';
+import Banner from './Banner';
 
 const Home = () => {
     return (

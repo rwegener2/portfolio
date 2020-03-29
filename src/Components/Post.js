@@ -2,6 +2,14 @@ import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
 import PostContent from '../database/posts/geojsons/geojsons.md'
 import Banner from '../Containers/Banner';
+import styled from 'styled-components';
+
+const Div = styled.div`
+  padding: 25px;
+  margin: auto;
+  max-width: 725px;
+ }
+`;
 
 class Post extends Component {
   constructor(props) {
@@ -20,9 +28,9 @@ class Post extends Component {
     return (
       <div className="Post">
         <Banner title='Post'/>
-        <div>
+        <Div>
             <ReactMarkdown source={this.state.content} />
-        </div>
+        </Div>
       </div>
     )
   }

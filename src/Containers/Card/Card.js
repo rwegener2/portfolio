@@ -10,21 +10,24 @@ const Div = styled.div`
 
   &:hover {
    box-shadow: inset 0 0 0 5px #5a464c;
+   -webkit-transform: scale(1.1);
+   -ms-transform: scale(1.1);
+   transform: scale(1.1);
  }
 `;
 
 
 const Card = () => {
     return (
-        <div className="card">
+        <Div className="card">
             {/* <img src="..." class="card-img-top" alt="..."> */}
-            <Div className="card-body">
+            <div className="card-body">
                 <h5 className="card-title">Post</h5>
                 <p className="card-text">Here is a little paragraph about and about this blog.  I need it to be longer, so that I can test margins so I am adding more to this beautiful self-bio.  Enjoy!</p>
                 {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
                 <Link className="btn btn-primary" to="/post">Read</Link>
-            </Div>
-        </div>
+            </div>
+        </Div>
     );
 }
 

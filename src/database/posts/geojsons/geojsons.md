@@ -34,7 +34,7 @@ Jumping In (Pool)
 ## Background: JSON objects
 To lay the foundation for a geojson, it is may help to first briefly touch on the good old garden variety JSON.  JSONs are  really a way of storing data.  They look like this:
 
-![JSONexample](./src/example_json.png =500x)
+![JSONexample](./assets/example_json.png =500x)
 <!-- <img src="/Users/rachelwegener/blog/posts/geojsons/example_json.png", width="400"> -->
 
 If you are familiar with Python you will notice it looks a lot like a dictionary.  JSON format data does fit really well into the dictionary syntax of Python.  Python dictionaries and JSONs are still different things, however.  JSONs aren't language specific and an advantage of JSON is that it can be used to store data in a way that is not tied to any particular programming language.  This makes storing and sharing data easier.  This is in contrast to a Python dictionary.  A Python dictionary exists in memory in a format interpretable mainly by Python, and not any other program or language. You could pickle it, but it would still not be in a very universally recognizable format (You couldn’t load a pickle object into a GIS system, for example). If you were to convert that dictionary to a JSON, however, you would be in much better shape.  
@@ -51,7 +51,7 @@ In short, while all the nity gritty details of JSON aren't that important, to co
 ## Enter the _GeoJSON_
 Now enter geojsons.  Here is an example:
 
-![geoJSONexample](./src/example_geojson.png =500x)
+![geoJSONexample](./assets/example_geojson.png =500x)
 
 We just took the regular JSON from above and made it a GeoJSON by giving it spatial information.  If you are familiar with JSONs you’ll notice that it looks a lot like a regular JSON.  Really everything about the object above totally conforms to JSON standards.  It is contained in curly brackets, strings are always marked by double quotations, elements are separated by commas, and so on.  What has happened though is that we have added rules like these for spatial data.  There must be a type key.  That entry has only 3 possible values.  Geometries are entered as coordinates in longitude, latitude order.  There is a whole document describing these conventions [here]().  In this post we are going to look at some of the big conventions that aid in understanding geojsons and how they represent real objects in space.
 
@@ -59,7 +59,7 @@ We just took the regular JSON from above and made it a GeoJSON by giving it spat
 
 While thus far we have talked about geojsons using rather dispassionate phrases such as "file format" and "encoding standard", we need to remember that at it's core a geojson is a way of storing information about some thing that exists in reality (or at least is a representation of reality in our minds :inception-top:).  Whether your geojson holds information about a road network, a middle school building footprint, or just some oblong shape, it is using letters, numbers, and symbols to store data about a real place.  In the case of the geojson there are three big picture ideas that can be represented:
 
-![Objects represented by GeoJSONs](./src/representing_geojsons.png)
+![Objects represented by GeoJSONs](./assets/representing_geojsons.png)
 
 We can see in the image that there are three entities that a geojson can represent - geometries, features, and featurecollections, and that the complexity of the object inreases in that order.  
 
@@ -74,13 +74,13 @@ We can see in the image that there are three entities that a geojson can represe
 
 Geojsons fundamentally tell us about geometry.  In geojson-land there are 6 types geometry: Point, MulitPoint, LineString, MultiLineString, Polygon, and MultiPolygon.  Put another way, there are the three fundamental GIS objects - Point, LineString, and Polygon - plus the “multi” versions of each of those - MultiPoint, MultiLineString, and MultiPolygon.  The “multi” version of each object is simply a group of more than 1 of that object (I'll be calling them Multi-Objects from here on out).
 
-![GeoJSON geometry types](./src/geojson_geometry_types.png)
+![GeoJSON geometry types](./assets/geojson_geometry_types.png)
 
 The shape of the object in a GeoJSON is listed under the "geometry" key.  It has two required keys beneath that: "type" and "coordinates".  There are rules about the way in which you type coordinates, such as that they should be in longitude, latitude order and that each coordiante should be contained in square brackets and seperated by commas.  If you want the nitty gritty on that you can dive into the docs.  Personally I never worry too much about those details because I almost never generate geoJSONs myself, since lots of softwares will generate them for you.
 
 Some more examples of geojson geometries:
 
-![Objects represented by GeoJSONs with Example](./src/representing_geojsons_examples.png)
+![Objects represented by GeoJSONs with Example](./assets/representing_geojsons_examples.png)
 
 **Can you add properties to a geometry?**
 
@@ -91,7 +91,7 @@ GeometryCollections.  They are a great extension on the geometry construct, but 
 
 #### Organizing the Keys
 <!-- Image pulling together all the different keys and their types of objects they connect to -->
-![Relationships between Objects with Keys](./src/type_relationships.png)
+![Relationships between Objects with Keys](./assets/type_relationships.png)
 
 * Other keys are possible, these are the ones formally specifed.  Type + geometry/features are the only two required ones, and properties is really common (check that info)
 * You probably can and it would still be valid JSON but does a shapefile open them as attributes if they aren't in properties?

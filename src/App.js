@@ -1,10 +1,12 @@
 import React from 'react';
-import Header from './Components/Header.js';
-import About from './Components/About.js';
-import Articles from './Components/Articles.js'
+import Header from './Containers/Header.js';
+import About from './Containers/About.js';
+import Articles from './Containers/Articles.js'
 import Post from './Components/Post'
-import Home from './Components/Home.js';
+import Home from './Containers/Home.js';
 import './App.css';
+import './bootstrap.css'
+
 import {
   BrowserRouter as Router,
   Switch,
