@@ -1,8 +1,12 @@
-import React, { Component } from 'react'
-import ReactMarkdown from 'react-markdown'
-import PostContent from '../database/posts/geojsons/geojsons.md'
-import Banner from '../Containers/Banner';
+import React from "react";
 import styled from 'styled-components';
+// import VectorContent from '../database/posts/vector_formats/vector_converting.js';
+import GeojsonContent from '../database/posts/geojsons/geojsons.js';
+import PostContent from '../database/earth_math/math.js';
+import Banner from '../Containers/Banner';
+import {
+  useParams
+} from "react-router-dom";
 
 const Div = styled.div`
   padding: 25px;
@@ -11,29 +15,19 @@ const Div = styled.div`
  }
 `;
 
-class Post extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = { terms: null }
-  }
-
-  componentWillMount() {
-    fetch(PostContent).then((response) => response.text()).then((text) => {
-      this.setState({ content: text })
-    })
-  }
-
-  render() {
-    return (
-      <div className="Post">
-        <Banner title='Post'/>
+function Post() {
+    let { postId } = useParams();
+    if (postId === 'geojsons') {
+      return (
+        <div>
+        <Banner title = 'Representing Objects with GeoJSONs' />
         <Div>
-            <ReactMarkdown source={this.state.content} />
+          <GeojsonContent />
         </Div>
-      </div>
-    )
+        </div>
+      );
+    }
+    return <h3>Generic - Requested topic ID: {postId}</h3>;
   }
-}
 
 export default Post;

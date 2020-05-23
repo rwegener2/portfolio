@@ -3,7 +3,7 @@
         id: 1,
         title: "geojsons",
         description: "Read more about geojsons than you ever wanted to know!",
-        path: "database/posts/geojsons/geojsons.md"
+        path: "geojsons"
     },
     {
         id: 2,

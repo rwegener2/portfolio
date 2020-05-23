@@ -26,9 +26,23 @@ Spli comp #2 - #12dede */
 
 /* https://stackoverflow.com/questions/12811149/what-does-the-dot-mean-in-css */
 
-.About .about-text {
+.About .text-block {
   padding: 25px;
   margin: auto;
   max-width: 725px;
   text-align: center;
+}
+
+.Home .text-block {
+  padding: 25px;
+  margin: auto;
+  max-width: 725px;
+  text-align: center;
+}
+
+.Test .table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
 }

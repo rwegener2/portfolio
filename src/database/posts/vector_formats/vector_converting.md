@@ -17,7 +17,11 @@ Features vs. geometries (if not clear link to other article!)
 * Shapefile
 * Geojson feature + geojson geometry
 * WKT is not specific to geometries, it is something general I need to read more about before I keep writing
-* shapely object
+
+The outsider: a shapely object (Python)
+
+## Libraries
+* fiona
 
 
 ## Overview of Conversions

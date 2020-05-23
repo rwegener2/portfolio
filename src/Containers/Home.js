@@ -6,8 +6,9 @@ const Home = () => {
     return (
         <div className='Home'>
             <Banner title='Home'/>
-            <div className='about-text'>
-                It would be fabuluous to think of what kind of content to go here.
+            <div className='text-block'>
+                <p>Welcome to this blog!  I'm putting information here, of a class and type not yet fully determined.</p>
+                <p>So check out the articles!  I hope the content can be useful.</p>
             </div>
         </div>
     )
